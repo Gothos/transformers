@@ -123,6 +123,8 @@ class BlenderbotLearnedPositionalEmbedding(nn.Embedding):
         positions = torch.arange(
             past_key_values_length, past_key_values_length + seq_len, dtype=torch.long, device=self.weight.device
         )
+        print(positions)
+        print(self.num_embeddings)
         return super().forward(positions)
 
 
